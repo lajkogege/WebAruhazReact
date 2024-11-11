@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 function Kosar(props) {
   return (
-    <div>
-      
-    </div>
-  )
+    <tr>
+      <td>{props.kosaram.title}</td>
+      <td>{props.kosaram.description}</td>
+      <td>{props.kosaram.price}</td>
+    </tr>
+  );
 }
 
-export default Kosar
+export default Kosar;

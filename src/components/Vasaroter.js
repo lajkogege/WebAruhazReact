@@ -1,20 +1,23 @@
-import React from 'react'
-import Termek from './Termek'
+import React from 'react';
+import Termek from './Termek';
 
 function Vasaroter(props) {
-    /*itt végig map-elünk a termékListán*/
-    return (
-        <div className='row'>
-          {props.lista.map((termek) => (
-            <Termek
-              key={termek.id} 
-              title={termek.title}
-              description={termek.description}
-              image={termek.image}
-              price={termek.price}
-            />
-          ))}
-        </div>
-      );}
+  function megjelenit(adat, db) {
+    console.log("A gyerekem üzeni:", adat, db, "db termék van a kosárban");
+    props.megjelenit(adat, db); // Hívjuk a szülő komponenst
+  }
 
-export default Vasaroter
+  return (
+    <div className="row VasaroTer">
+      {props.lista.map((termek, index) => (
+        <Termek
+          key={index}
+          termekAdat={termek}
+          megjelenit={megjelenit}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default Vasaroter;

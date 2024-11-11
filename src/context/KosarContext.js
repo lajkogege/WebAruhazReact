@@ -7,8 +7,7 @@ export const KosarProvider=({children })=>{
     const [kosarLista, setKosarLista]=useState([]);
 
     function kosar(obj){
-        for
-        kosarLista.push()
+     
     }
     
    
